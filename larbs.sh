@@ -6,10 +6,10 @@
 
 ### OPTIONS AND VARIABLES ###
 
-dotfilesrepo="https://github.com/lukesmithxyz/voidrice.git"
-progsfile="https://raw.githubusercontent.com/LukeSmithxyz/LARBS/master/progs.csv"
+dotfilesrepo="https://github.com/cd-w/voidrice.git"
+progsfile="https://raw.githubusercontent.com/cd-w/LARBS/main/progs.csv"
 aurhelper="yay"
-repobranch="master"
+repobranch="main"
 
 ### FUNCTIONS ###
 
@@ -115,7 +115,7 @@ manualinstall() {
 		--no-tags -q "https://aur.archlinux.org/$1.git" "$repodir/$1" ||
 		{
 			cd "$repodir/$1" || return 1
-			sudo -u "$name" git pull --force origin master
+			sudo -u "$name" git pull --force origin main
 		}
 	cd "$repodir/$1" || exit 1
 	sudo -u "$name" -D "$repodir/$1" \
@@ -138,7 +138,7 @@ gitmakeinstall() {
 		--no-tags -q "$1" "$dir" ||
 		{
 			cd "$dir" || return 1
-			sudo -u "$name" git pull --force origin master
+			sudo -u "$name" git pull --force origin main
 		}
 	cd "$dir" || exit 1
 	make >/dev/null 2>&1
@@ -181,7 +181,7 @@ installationloop() {
 putgitrepo() {
 	# Downloads a gitrepo $1 and places the files in $2 only overwriting conflicts
 	whiptail --infobox "Downloading and installing config files..." 7 60
-	[ -z "$3" ] && branch="master" || branch="$repobranch"
+	[ -z "$3" ] && branch="main" || branch="$repobranch"
 	dir=$(mktemp -d)
 	[ ! -d "$2" ] && mkdir -p "$2"
 	chown "$name":wheel "$dir" "$2"
