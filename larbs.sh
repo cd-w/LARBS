@@ -6,8 +6,8 @@
 
 ### OPTIONS AND VARIABLES ###
 
-dotfilesrepo="https://github.com/cd-w/voidrice.git"
-progsfile="https://raw.githubusercontent.com/cd-w/LARBS/main/progs.csv"
+dotfilesrepo="https://github.com/watsonism/voidrice.git"
+progsfile="https://raw.githubusercontent.com/watsonism/LARBS/main/progs.csv"
 aurhelper="yay"
 repobranch="main"
 
